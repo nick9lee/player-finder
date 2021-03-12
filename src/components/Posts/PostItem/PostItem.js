@@ -2,12 +2,13 @@ import React from 'react';
 
 import styles from './PostItem.module.css';
 import PillBadge from '../../UI/PillBadge/PillBadge';
+import ProfilePic from '../../Profiles/ProfilePic/ProfilePic';
 
 const postItem = props => {
   return (
     <div className={styles.PostItemContainer}>
       <div className={styles.CreatedBy}>
-        <div className={styles.ProfilePic}>&nbsp;</div>
+        <ProfilePic />
         <p className={styles.Name}>
           {props.user.name}
           </p>

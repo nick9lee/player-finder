@@ -5,6 +5,7 @@ import PostItem from '../../components/Posts/PostItem/PostItem';
 import PostDetail from '../../components/Posts/PostDetail/PostDetail';
 import PillBadge from '../../components/UI/PillBadge/PillBadge';
 import Filters from '../Filters/Filters';
+import Filter from '../../components/Filter/Filter';
 
 const user = {
   name: 'John Smith',
@@ -27,7 +28,7 @@ class Posts extends Component {
   render() {
     return (
       <Fragment>
-        <Filters />
+        {/* <Filters /> */}
         <h1>Posts</h1>
         <div className={styles.FiltersContainer}>
           <h2 className={styles.FiltersTitle}>Filters</h2>
@@ -36,13 +37,12 @@ class Posts extends Component {
               this.state.filters.map((filt, index) => {
                 return (
                   <li className={styles.Filter} key={index}>
-                    <PillBadge type='PrimaryBorder' border>
-                      <span className={styles.RemoveFilter}>&#9747;</span>{filt}
-                    </PillBadge>
+                    <Filter>{filt}</Filter>
                   </li>
                 );
               })
             }
+            <span className={styles.AddFilters}>Add Filters+</span>
           </ul>
         </div>
         <PostItem user={user} post={post}/>

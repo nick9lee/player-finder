@@ -1,0 +1,48 @@
+.Since {
+  font-weight: lighter;
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.Name {
+  font-size: 1.8rem;
+}
+
+.Description {
+  font-size: 1.2rem;
+  width: 70vw;
+}
+
+.SportsItem {
+  display: inline-block;
+}
+
+.SportsItem {
+  margin-left: 1rem;
+}
+
+.SportsPlayed {
+  font-size: 1.2rem;
+}
+
+.SportsList,
+.ProfilePic {
+  display: inline-block;
+}
+
+.ProfileDetail {
+  display: inline-block;
+}
+
+.ProfilePic {
+  border-right: 1px solid #ccc;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  margin-right: .5rem;
+}
+
+.ProfileItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}

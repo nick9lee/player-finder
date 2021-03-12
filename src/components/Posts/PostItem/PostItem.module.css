@@ -1,0 +1,43 @@
+.PostItemContainer {
+  display: flex;
+  padding: 1rem 1rem;
+}
+
+.CreatedBy {
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Name {
+  text-align: center;
+}
+
+.PostBrief {
+  margin-left: 1rem;
+}
+
+.ProfilePic {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  background-color: aquamarine;
+}
+
+.Timestamp {
+  display: inline-block;
+  font-weight: lighter;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+.CategoriesList {
+  display: flex;
+  margin-top: .3rem;
+}
+
+.Category:not(:first-child) {
+  margin-left: 1rem;
+}

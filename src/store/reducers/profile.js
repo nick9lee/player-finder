@@ -1,21 +1,21 @@
 import * as actionTypes from '../actions/actions';
 
 const initialState = {
-  posts: [],
-  viewingPost: null
+  profiles: [],
+  viewingProfile: null
 };
 
 const reducer = (state = initialState, action) => {
   switch(action.type) {
-    case actionTypes.CREATE_POST:
+    case actionTypes.CREATE_PROFILE:
       return state;
-    case actionTypes.VIEW_POST:
+    case actionTypes.VIEW_PROFILE:
       return state;
-    case actionTypes.VIEW_POSTS:
+    case actionTypes.VIEW_PROFILES:
       return state;
-    case actionTypes.EDIT_POST:
+    case actionTypes.EDIT_PROFILE:
       return state;
-    case actionTypes.REMOVE_POST:
+    case actionTypes.REMOVE_PROFILE:
       return state;
     default:
       return state;

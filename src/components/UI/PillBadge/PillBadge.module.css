@@ -1,0 +1,26 @@
+.PillBadge {
+  border-radius: 1rem;
+  padding: 0 .5rem;
+}
+
+.PrimaryBorder {
+  background-color: #bbc7ff;
+  color: #3358ff;
+  border: 1px solid #3358ff;
+}
+
+.Primary {
+  background-color: #bbc7ff;
+  color: #3358ff;
+}
+
+.OrangeBorder {
+  background-color: #ffdbbb;
+  color: #cc6000;
+  border: 1px solid #cc6000;
+}
+
+.Orange {
+  background-color: #ffdbbb;
+  color: #cc6000;
+}

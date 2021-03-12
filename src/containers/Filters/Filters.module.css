@@ -1,0 +1,25 @@
+.FiltersContainer {
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50vw;
+  transform: translate(-50%, -50%);
+}
+
+.CurFilters {
+  padding: 4rem 0 2rem 0;
+  text-align: center;
+}
+
+.Filters {
+  text-align: center;
+}
+
+.Close {
+  font-size: large;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: .5rem;
+}

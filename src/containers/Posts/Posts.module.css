@@ -1,0 +1,19 @@
+.FiltersTitle {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.FiltersList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Filter {
+  margin: 0 .5rem;
+  font-size: 1.2rem;
+}
+
+.RemoveFilter {
+  margin-right: .3rem;
+}

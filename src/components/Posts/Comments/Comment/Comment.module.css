@@ -1,0 +1,19 @@
+.CommentHeading {
+  display: flex;
+  align-items: center;
+}
+
+.CommentHeading::after {
+  display: inline-block;
+  width: 20px;
+  height: 1rem;
+}
+
+.Name {
+  margin: 0 .5rem;
+}
+
+.CommentBody {
+  font-size: 1.5rem;
+  margin-left: 3rem;
+}

@@ -1,0 +1,7 @@
+.Comments {
+  margin: 1rem 0;
+}
+
+.CommentItem:not(:last-child) {
+  margin-bottom: 2rem;
+}

@@ -6,6 +6,7 @@ import PostDetail from '../../components/Posts/PostDetail/PostDetail';
 import PillBadge from '../../components/UI/PillBadge/PillBadge';
 import Filters from '../Filters/Filters';
 import Filter from '../../components/Filter/Filter';
+import Pagination from '../../components/UI/Pagination/Pagination';
 
 const user = {
   name: 'John Smith',
@@ -42,15 +43,16 @@ class Posts extends Component {
                 );
               })
             }
-            <span className={styles.AddFilters}>Add Filters+</span>
           </ul>
+          <p className={styles.AddFilters}>Add Filters+</p>
         </div>
+        <Pagination size={4} active={2} />
         <PostItem user={user} post={post}/>
         <PostItem user={user} post={post}/>
         <PostItem user={user} post={post}/>
         <PostItem user={user} post={post}/>
         <PostItem user={user} post={post}/>
-        
+        <Pagination size={4} active={2} />
         {/* <PostDetail user={user} post={post}/> */}
         
       </Fragment>

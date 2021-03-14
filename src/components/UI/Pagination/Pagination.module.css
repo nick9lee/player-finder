@@ -1,0 +1,25 @@
+.PageNum {
+  margin: 0 .5rem;
+  border-radius: 50%;
+  padding: .2rem .8rem .3rem .8rem;
+}
+
+.PageNum.Active {
+  font-weight: bolder;
+  color: #3358ff;
+  background-color: #bbc7ff;
+  font-weight: bold;
+}
+
+.Prev,
+.Next {
+  padding: 0 3px 2px 3px;
+}
+
+.Pagination {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-weight: lighter;
+}
+

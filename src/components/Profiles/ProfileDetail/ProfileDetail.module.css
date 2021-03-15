@@ -1,0 +1,14 @@
+.ProfilePic {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.Description {
+  padding-left: 2rem;
+  font-size: 1.2rem;
+}
+
+.Posts {
+  margin-top: 3rem;
+  text-align: center;
+}

@@ -1,0 +1,26 @@
+.NavIcon,
+.NavIcon::after,
+.NavIcon::before {
+  height: 5px;
+  width: 2.5rem;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.NavIcon {
+  top: 3rem;
+  left: 2rem;
+  position: fixed;
+}
+
+.NavIcon::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+}
+
+.NavIcon::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+}

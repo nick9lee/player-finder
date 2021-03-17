@@ -7,18 +7,24 @@ import PillBadge from '../../components/UI/PillBadge/PillBadge';
 import Filters from '../Filters/Filters';
 import Filter from '../../components/Filter/Filter';
 import Pagination from '../../components/UI/Pagination/Pagination';
+import PostList from '../../components/Posts/Posts';
 
 const user = {
   name: 'John Smith',
   profilePic: 'not an url'
 };
 
-const post = {
-  title: 'Looking for doubles badminton player in the area',
-  timestamp: 'March 4, 2021',
-  location: 'America',
-  categories: ['Badminton', 'Double Player']
-}
+const posts = [
+  {
+    post: {
+      title: 'Looking for doubles badminton player in the area',
+      timestamp: 'March 4, 2021',
+      location: 'America',
+      categories: ['Badminton', 'Double Player'],
+    },
+    user: user
+  }
+]
 
 class Posts extends Component {
   state = {
@@ -38,7 +44,7 @@ class Posts extends Component {
               this.state.filters.map((filt, index) => {
                 return (
                   <li className={styles.Filter} key={index}>
-                    <Filter>{filt}</Filter>
+                    <Filter close>{filt}</Filter>
                   </li>
                 );
               })
@@ -47,13 +53,9 @@ class Posts extends Component {
           <p className={styles.AddFilters}>Add Filters+</p>
         </div>
         <Pagination size={4} active={2} />
-        <PostItem user={user} post={post}/>
-        <PostItem user={user} post={post}/>
-        <PostItem user={user} post={post}/>
-        <PostItem user={user} post={post}/>
-        <PostItem user={user} post={post}/>
+        <PostList posts={posts} />
         <Pagination size={4} active={2} />
-        {/* <PostDetail user={user} post={post}/> */}
+        {/* <PostDetail user={posts[0].user} post={posts[0].post}/> */}
         
       </Fragment>
     );

@@ -1,0 +1,14 @@
+.Item {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 2.5;
+  color: #888;
+  transition: all 400ms;
+  text-align: center;
+}
+
+.Item:hover,
+.Item:active {
+  color: black;
+}

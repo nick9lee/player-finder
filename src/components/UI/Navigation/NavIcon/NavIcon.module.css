@@ -11,6 +11,7 @@
   top: 3rem;
   left: 2rem;
   position: fixed;
+  transition: all 400ms;
 }
 
 .NavIcon::after {
@@ -23,4 +24,20 @@
   content: "";
   position: absolute;
   top: -8px;
+}
+
+.NavIcon.Active::after,
+.NavIcon.ViewingPost::after {
+  transform: translateY(-8px);
+  opacity: .5;
+}
+
+.NavIcon.Active::before,
+.NavIcon.ViewingPost::before {
+  transform: translateY(8px);
+  opacity: .5;
+}
+
+.NavIcon {
+
 }

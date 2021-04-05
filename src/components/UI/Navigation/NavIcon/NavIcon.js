@@ -4,7 +4,7 @@ import styles from './NavIcon.module.css';
 
 const navIcon = props => {
   return (
-    <div className={styles.NavIcon}></div>
+    <div className={[styles.NavIcon].join(' ')}></div>
   );
 };
 

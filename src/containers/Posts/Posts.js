@@ -23,7 +23,61 @@ const posts = [
       categories: ['Badminton', 'Double Player'],
     },
     user: user
-  }
+  },
+  {
+    post: {
+      title: 'Looking for doubles badminton player in the area',
+      timestamp: 'March 4, 2021',
+      location: 'America',
+      categories: ['Badminton', 'Double Player'],
+    },
+    user: user
+  },
+  {
+    post: {
+      title: 'Looking for doubles badminton player in the area',
+      timestamp: 'March 4, 2021',
+      location: 'America',
+      categories: ['Badminton', 'Double Player'],
+    },
+    user: user
+  },
+  {
+    post: {
+      title: 'Looking for doubles badminton player in the area',
+      timestamp: 'March 4, 2021',
+      location: 'America',
+      categories: ['Badminton', 'Double Player'],
+    },
+    user: user
+  },
+  {
+    post: {
+      title: 'Looking for doubles badminton player in the area',
+      timestamp: 'March 4, 2021',
+      location: 'America',
+      categories: ['Badminton', 'Double Player'],
+    },
+    user: user
+  },
+  {
+    post: {
+      title: 'Looking for doubles badminton player in the area',
+      timestamp: 'March 4, 2021',
+      location: 'America',
+      categories: ['Badminton', 'Double Player'],
+    },
+    user: user
+  },
+  {
+    post: {
+      title: 'Looking for doubles badminton player in the area',
+      timestamp: 'March 4, 2021',
+      location: 'America',
+      categories: ['Badminton', 'Double Player'],
+    },
+    user: user
+  },
 ]
 
 class Posts extends Component {
@@ -35,7 +89,7 @@ class Posts extends Component {
   render() {
     return (
       <Fragment>
-        {/* <Filters /> */}
+        <Filters />
         <h1>Posts</h1>
         <div className={styles.FiltersContainer}>
           <h2 className={styles.FiltersTitle}>Filters</h2>

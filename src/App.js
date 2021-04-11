@@ -6,6 +6,8 @@ import Profiles from './containers/Profiles/Profiles';
 import Navigation from './containers/Navigation/Navigation';
 import Login from './containers/Auth/Login/Login';
 import Post from './containers/Posts/PostDetail/PostDetail';
+import Signup from './containers/Auth/Signup/Signup';
+import NewPost from './containers/Posts/NewPost/NewPost';
 import './App.css';
 
 const app = props => {
@@ -17,6 +19,8 @@ const app = props => {
         <Route path='/posts' exact component={Posts} />
         <Route path='/user' exact component={Profiles} />
         <Route path='/login' exact component={Login} />
+        <Route path='/signup' exact component={Signup} />
+        <Route path='/posts/new' exact component={NewPost} />
         <Route path = '/posts/:id' component={Post} />
       </Switch>
       </BrowserRouter>

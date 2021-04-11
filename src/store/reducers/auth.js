@@ -25,7 +25,6 @@ const reducer = (state = initialState, action) => {
     case actionTypes.AUTH_FAIL:
       return {
         ...state,
-        users: [],
         user: null,
         authFailed: true,
         errMsg: action.errMsg
@@ -34,9 +33,20 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         user: null,
-        token: null,
         authFail: false,
         errMsg: null
+      };
+    case actionTypes.SIGNUP:
+      const users = [...state.users];
+      users.push(action.data);
+      return {
+        ...state,
+        users: users
+      };
+    case actionTypes.SET_USER:
+      return {
+        ...state,
+        user: action.user
       };
     default:
       return state;

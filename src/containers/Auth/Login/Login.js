@@ -33,30 +33,35 @@ class Login extends Component {
   onSubmitHandler = (event) => {
     event.preventDefault();
 
+    let success = false;
+    
     // Try to log the user in
     this.props.auth.users.forEach(user => {
       if (this.state.formControls.email.value === user.Email && 
         this.state.formControls.password.value === user.Password) {
         // Update user in the state if authentication is successful
         this.props.authSuccess(user);
-        return;
+        this.props.history.push({pathname: '/user'});
+        success = true;
       }
     });
 
-    // If unsuccessful, dispatch auth failed and clear fields
-    const formControls = {
-      ...this.state.formControls,
-      email: {
-        ...this.state.formControls.email,
-        value: ''
-      },
-      password: {
-        ...this.state.formControls.password,
-        value: ''
+    if (!success) {
+      // If unsuccessful, dispatch auth failed and clear fields
+      const formControls = {
+        ...this.state.formControls,
+        email: {
+          ...this.state.formControls.email,
+          value: ''
+        },
+        password: {
+          ...this.state.formControls.password,
+          value: ''
+        }
       }
+      this.setState({formControls: formControls});
+      this.props.authFail('Incorrect email or password');
     }
-    this.setState({formControls: formControls});
-    this.props.authFail('Incorrect email or password');
   }
 
   componentDidMount() {

@@ -1,16 +1,26 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 
-import styles from './Profiles.module.css';
-import ProfileItem from '../../components/Profiles/ProfileItem/ProfileItem';
 import ProfileDetail from '../../components/Profiles/ProfileDetail/ProfileDetail';
 
 class Profiles extends Component {
   render() {
     return (
-      // <ProfileItem />
-      <ProfileDetail />
+      <Fragment>
+        {
+          this.props.user ?
+          <ProfileDetail user={this.props.user} /> : <Redirect to='/login' />
+        }
+      </Fragment>
     );
   }
 }
 
-export default Profiles;
+const mapStateToProps = state => {
+  return {
+    user: state.auth.user
+  };
+};
+
+export default connect(mapStateToProps)(Profiles);

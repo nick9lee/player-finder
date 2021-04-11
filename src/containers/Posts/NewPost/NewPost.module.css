@@ -1,0 +1,39 @@
+.Container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid rgba(0, 0, 0, .3);
+  padding: 1rem 5rem 3rem 5rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+}
+
+.SubmitBtn {
+  border: none;
+  background-color: rgba(150, 150, 150, .8);
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  color: white;
+  margin-top: 1rem;
+}
+
+.Input {
+  border: none;
+  border-bottom: 1px solid rgba(150, 150, 150, .8);
+  outline: none;
+  margin-bottom: 1rem;
+  font-family: inherit;
+}
+
+.Textarea {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(150, 150, 150, .8);
+  font-family: inherit;
+}
+
+.FormGroup {
+  display: flex;
+  flex-direction: column;
+}

@@ -24,6 +24,20 @@ export const getUsers = () => {
   };
 }
 
+export const setUser = user => {
+  return {
+    type: actionTypes.SET_USER,
+    user: user
+  };
+}
+
+export const signup = data => {
+  return  {
+    type: actionTypes.SIGNUP,
+    data: data
+  };
+}
+
 export const authFail = errMsg => {
   return {
     type: actionTypes.AUTH_FAIL,
@@ -39,7 +53,6 @@ export const authSuccess = (user) => {
 }
 
 export const logout = () => {
-  localStorage.removeItem('token');
   return {
     type: actionTypes.LOGOUT
   }

@@ -3,6 +3,8 @@ export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const AUTH_FAIL = 'AUTH_FAIL';
 export const LOGOUT = 'LOGOUT';
 export const GET_USERS = 'GET_USERS';
+export const SIGNUP = 'SIGNUP';
+export const SET_USER = 'SET_USER';
 
 // Profile
 export const CREATE_PROFILE = 'CREATE_PROFILE';

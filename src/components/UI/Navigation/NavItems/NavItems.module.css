@@ -1,8 +1,28 @@
 .ItemsContainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
+  margin-top: 50%;
+  transform: translateY(-200%);
+  opacity: 0;
+  transition: all 800ms;
+}
+
+.NavItems {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transform: scale(0);
+}
+
+.NavItems.Show {
+  z-index: 1000;
+  transform: none;
+}
+
+.ItemsContainer.Show {
+  opacity: 1;
+  transform: none;
 }

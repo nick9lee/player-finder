@@ -17,7 +17,7 @@ const pagination = props => {
         <span className={styles.Prev}>&lt;</span>
         {
           getPaginationArr(props.size).map(val => {
-            return <span key={val} className={[styles.PageNum, props.active == val ? styles.Active : null].join(' ')}>{val}</span>
+            return <span key={val} className={[styles.PageNum, props.active === val ? styles.Active : null].join(' ')}>{val}</span>
           })
         }
         <span className={styles.Next}>&gt;</span>

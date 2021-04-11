@@ -6,7 +6,7 @@ import PillBadge from '../UI/PillBadge/PillBadge';
 const filter = props => {
   return (
     <PillBadge type="PrimaryBorder">
-      {props.children}
+      <span className={styles.Filter}>{props.children}</span>
       {props.close ? <span className={styles.RemoveFilter}>&#9747;</span> : null}
     </PillBadge>
   );

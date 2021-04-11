@@ -5,17 +5,19 @@ import Posts from './containers/Posts/Posts';
 import Profiles from './containers/Profiles/Profiles';
 import Navigation from './containers/Navigation/Navigation';
 import Login from './containers/Auth/Login/Login';
+import Post from './containers/Posts/PostDetail/PostDetail';
 import './App.css';
 
 const app = props => {
   return (
     <Fragment>
-      <Navigation />
       <BrowserRouter>
+      <Navigation />
       <Switch>
-        <Route path='/posts' component={Posts} />
-        <Route path='/profiles' component={Profiles} />
-        <Route path='/login' component={Login} />
+        <Route path='/posts' exact component={Posts} />
+        <Route path='/user' exact component={Profiles} />
+        <Route path='/login' exact component={Login} />
+        <Route path = '/posts/:id' component={Post} />
       </Switch>
       </BrowserRouter>
     </Fragment>

@@ -24,8 +24,17 @@
   font-size: 1.2rem;
   text-align: center;
   margin-top: .5rem;
+  cursor: pointer;
+}
+
+.AddFilters:hover {
+  text-decoration: none;
 }
 
 .FiltersContainer {
   margin-bottom: 2rem;
+}
+
+.AddFiltersContainer {
+  text-align: center;
 }

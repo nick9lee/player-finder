@@ -1,4 +1,5 @@
 import * as actionTypes from './actions';
+import axios from 'axios';
 
 export const authStart = (email, password) => {
   // 1. Make HTTP Request
@@ -10,22 +11,30 @@ export const authStart = (email, password) => {
   return authSuccess();
 }
 
-const authFail = errMsg => {
-  return {
-    type: actionTypes.AUTH_FAIL,
-    payload: {
-      errMsg: errMsg
-    }
+export const getUsers = () => {
+  return dispatch => {
+    axios.get(
+      'http://localhost:3000/users'
+    ).then(res => {
+      dispatch({
+        type: actionTypes.GET_USERS,
+        users: res.data
+      });
+    });
   };
 }
 
-const authSuccess = (user, token) => {
+export const authFail = errMsg => {
+  return {
+    type: actionTypes.AUTH_FAIL,
+    errMsg: errMsg
+  };
+}
+
+export const authSuccess = (user) => {
   return {
     type: actionTypes.AUTH_SUCCESS,
-    payload: {
-      user: user,
-      token: token
-    }
+    user: user
   };
 }
 

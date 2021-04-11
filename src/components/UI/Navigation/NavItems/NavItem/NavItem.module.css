@@ -6,9 +6,14 @@
   color: #888;
   transition: all 400ms;
   text-align: center;
+  text-decoration: none;
 }
 
 .Item:hover,
 .Item:active {
   color: black;
+}
+
+.ItemContainer {
+  text-align: center;
 }

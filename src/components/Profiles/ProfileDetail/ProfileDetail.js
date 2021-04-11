@@ -14,7 +14,7 @@ const post = {
   title: 'Looking for doubles badminton player in the area',
   timestamp: 'March 4, 2021',
   location: 'America',
-  categories: ['Badminton', 'Double Player']
+  tags: ['Badminton', 'Double Player']
 }
 
 const profileDetail = props => {

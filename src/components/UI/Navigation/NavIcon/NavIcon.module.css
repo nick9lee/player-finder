@@ -11,19 +11,21 @@
   top: 3rem;
   left: 2rem;
   position: fixed;
-  transition: all 400ms;
+  z-index: 5000;
 }
 
 .NavIcon::after {
   content: "";
   position: absolute;
   top: 8px;
+  transition: all 800ms;
 }
 
 .NavIcon::before {
   content: "";
   position: absolute;
   top: -8px;
+  transition: all 800ms;
 }
 
 .NavIcon.Active::after,

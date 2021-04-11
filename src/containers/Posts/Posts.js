@@ -1,95 +1,57 @@
 import React, {Component, Fragment} from 'react';
+import axios from 'axios';
 
 import styles from './Posts.module.css';
-import PostItem from '../../components/Posts/PostItem/PostItem';
-import PostDetail from '../../components/Posts/PostDetail/PostDetail';
-import PillBadge from '../../components/UI/PillBadge/PillBadge';
 import Filters from '../Filters/Filters';
 import Filter from '../../components/Filter/Filter';
 import Pagination from '../../components/UI/Pagination/Pagination';
 import PostList from '../../components/Posts/Posts';
 
-const user = {
-  name: 'John Smith',
-  profilePic: 'not an url'
-};
-
-const posts = [
-  {
-    post: {
-      title: 'Looking for doubles badminton player in the area',
-      timestamp: 'March 4, 2021',
-      location: 'America',
-      categories: ['Badminton', 'Double Player'],
-    },
-    user: user
-  },
-  {
-    post: {
-      title: 'Looking for doubles badminton player in the area',
-      timestamp: 'March 4, 2021',
-      location: 'America',
-      categories: ['Badminton', 'Double Player'],
-    },
-    user: user
-  },
-  {
-    post: {
-      title: 'Looking for doubles badminton player in the area',
-      timestamp: 'March 4, 2021',
-      location: 'America',
-      categories: ['Badminton', 'Double Player'],
-    },
-    user: user
-  },
-  {
-    post: {
-      title: 'Looking for doubles badminton player in the area',
-      timestamp: 'March 4, 2021',
-      location: 'America',
-      categories: ['Badminton', 'Double Player'],
-    },
-    user: user
-  },
-  {
-    post: {
-      title: 'Looking for doubles badminton player in the area',
-      timestamp: 'March 4, 2021',
-      location: 'America',
-      categories: ['Badminton', 'Double Player'],
-    },
-    user: user
-  },
-  {
-    post: {
-      title: 'Looking for doubles badminton player in the area',
-      timestamp: 'March 4, 2021',
-      location: 'America',
-      categories: ['Badminton', 'Double Player'],
-    },
-    user: user
-  },
-  {
-    post: {
-      title: 'Looking for doubles badminton player in the area',
-      timestamp: 'March 4, 2021',
-      location: 'America',
-      categories: ['Badminton', 'Double Player'],
-    },
-    user: user
-  },
-]
-
 class Posts extends Component {
   state = {
-    filters: ['Most Recent', 'Most Response'],
-    showFilterModal: false
+    filters: [],
+    showFilters: false,
+    posts: []
   };
+
+  toggleFilters = () => {
+    this.setState(prevState => {
+      return {
+        showFilters: !prevState.showFilters
+      }
+    });
+  }
+
+  componentDidMount() {
+    axios.get(
+      'http://localhost:3000/posts'
+    ).then(res => {
+      const posts = [];
+      res.data.forEach(p => {
+        const post = {
+          post: {
+            ...p,
+            tags: ["Badminton", "Doubles Player"]
+          },
+          user: null
+        };
+
+        axios.get(
+          `http://localhost:3000/users/${p.Coach_ID}`
+        ).then(userRes => {
+          if (userRes.data !== 'user not found') post.user = userRes.data;
+        }).catch(e => {
+        });
+        posts.push(post);
+      });
+      this.setState({posts: posts});
+    });
+  }
 
   render() {
     return (
       <Fragment>
-        <Filters />
+        <Filters show={this.state.showFilters} closeHandler={this.toggleFilters} />
         <h1>Posts</h1>
         <div className={styles.FiltersContainer}>
           <h2 className={styles.FiltersTitle}>Filters</h2>
@@ -104,11 +66,14 @@ class Posts extends Component {
               })
             }
           </ul>
-          <p className={styles.AddFilters}>Add Filters+</p>
+          <div className={styles.AddFiltersContainer}>
+            <span className={styles.AddFilters} onClick={this.toggleFilters}>Add Filters+</span>
+          </div>
         </div>
-        <Pagination size={4} active={2} />
-        <PostList posts={posts} />
-        <Pagination size={4} active={2} />
+
+        <Pagination size={4} active={1} />
+        <PostList posts={this.state.posts} />
+        <Pagination size={4} active={1} />
         {/* <PostDetail user={posts[0].user} post={posts[0].post}/> */}
         
       </Fragment>

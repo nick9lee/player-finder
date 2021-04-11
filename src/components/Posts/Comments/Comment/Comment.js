@@ -9,12 +9,12 @@ const comment = props => {
       <div className={styles.CommentHeading}>
         <ProfilePic />
         <h3 className={styles.Name}>
-          John Smith
+          {props.comment.Name ? props.comment.Name : 'John Smith'}
         </h3>
-        <span className={styles.TimeStamp}>Time Ago</span>
+        <span className={styles.TimeStamp}>{props.comment.Time_Added ? props.comment.Time_Added : 'Time Ago'}</span>
       </div>
       <p className={styles.CommentBody}>
-        This is the body of a comment
+        {props.comment.Body ? props.comment.Body : 'This is the body of the comment.'}
       </p>
     </Fragment>
 

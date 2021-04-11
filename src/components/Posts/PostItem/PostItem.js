@@ -9,21 +9,24 @@ const postItem = props => {
     <div className={styles.PostItemContainer}>
       <div className={styles.CreatedBy}>
         <ProfilePic />
-        <p className={styles.Name}>
-          {props.user.name}
-          </p>
+        {
+          props.user ?
+          <p className={styles.Name}>
+            {props.user.Fname} {props.user.Lname}
+          </p> : null
+        }
       </div>
       <div className={styles.PostBrief}>
         <h2 className={styles.PostTitle}>
-          {props.post.title}
+          {props.post.Title}
           <p className={styles.Timestamp}>
-            {props.post.timestamp}
+            {props.post.Time_posted}
           </p>
         </h2>
 
         <ul className={styles.CategoriesList}>
           {
-            props.post.categories.map((cat, index) => {
+            props.post.tags.map((cat, index) => {
               return (
                 <li className={styles.Category} key={index}>
                   <PillBadge type='Orange'>{cat}</PillBadge>

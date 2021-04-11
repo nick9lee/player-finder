@@ -1,10 +1,11 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import styles from './NavItem.module.css';
 
 const navItem = props => {
   return (
-    <div className={styles.Item}>{props.children}</div>
+    <div onClick={props.clicked} className={styles.ItemContainer}><Link to='/posts' className={styles.Item}>{props.children}</Link></div>
   );
 };
 

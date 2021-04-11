@@ -8,9 +8,11 @@ const comments = props => {
     <Fragment>
       <h2 className={styles.Comments}>Comments</h2>
       <ul>
-        <li className={styles.CommentItem}><Comment /></li>
-        <li className={styles.CommentItem}><Comment /></li>
-        <li className={styles.CommentItem}><Comment /></li>
+        {
+          props.comments.map((comment, index) => {
+            return <Comment key={index} comment={comment} />
+          })
+        }
       </ul>
       {
         // props.comments.map(comment => {

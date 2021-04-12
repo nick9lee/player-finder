@@ -9,7 +9,7 @@ const navItems = props => {
       <div className={[styles.ItemsContainer, props.show ? styles.Show : ''].join(' ')}>
         {
           props.items.map((item, index) => {
-            return <NavItem key={index} clicked={item.clicked} to={item.to}>{item.name}</NavItem>
+            return <NavItem key={index} clicked={item.clickHandler} to={item.to}>{item.name}</NavItem>
           })
         }
       </div>

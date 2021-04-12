@@ -1,6 +1,19 @@
+import axios from 'axios';
 import * as actionTypes from './actions';
 
-export const createPost = (post, token) => {
+export const createPost = post => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  };
+
+  axios.post(
+    'http://localhost:3000/posts', post, config
+  ).then(res => {
+    console.log(res);
+  })
+
   // 1. Make POST request
 
   // 2. Can fail

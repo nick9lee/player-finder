@@ -6,20 +6,6 @@ import NavItems from '../../components/UI/Navigation/NavItems/NavItems';
 import * as actions from '../../store/actions/auth';
 
 class Navigation extends Component {
-  state = {
-    isOpen: false,
-    navItems: [
-      {
-        name: 'Posts',
-        to: '/posts'
-      },
-      {
-        name: 'Login/Signup',
-        to: '/login'
-      }
-    ]
-  }
-
   clickHandler = () => {
     this.setState(prevState => {
       return {
@@ -27,6 +13,22 @@ class Navigation extends Component {
       }
     });
   };
+
+  state = {
+    isOpen: false,
+    navItems: [
+      {
+        name: 'Posts',
+        to: '/posts',
+        clickHandler: this.clickHandler
+      },
+      {
+        name: 'Login/Signup',
+        to: '/login',
+        clickHandler: this.clickHandler
+      }
+    ]
+  }
 
   logoutHandler = () => {
     this.props.logout();
@@ -42,7 +44,7 @@ class Navigation extends Component {
       {
         name: 'Posts',
         to: '/posts',
-        clicked: this.clickHandler
+        clickHandler: this.clickHandler
       }
     ];
     if (prevUser) {
@@ -50,7 +52,7 @@ class Navigation extends Component {
         navItems.push({
           name: 'Login/Signup',
           to: '/login',
-          clicked: this.clickHandler
+          clickHandler: this.clickHandler
         });
         this.setState({navItems: navItems});
         return;
@@ -60,22 +62,22 @@ class Navigation extends Component {
         navItems.push({
           name: 'Chats',
           to: '/chats',
-          clicked: this.clickHandler
+          clickHandler: this.clickHandler
         });
         navItems.push({
           name: 'Make a Post',
           to: '/posts/new',
-          clicked: this.clickHandler
+          clickHandler: this.clickHandler
         });
         navItems.push({
           name: `${this.props.user.Fname} ${this.props.user.Lname}`,
           to: '/user',
-          clicked: this.clickHandler
+          clickHandler: this.clickHandler
         });
         navItems.push({
           name: 'Logout',
           to: '/login',
-          clicked: this.logoutHandler
+          clickHandler: this.logoutHandler
         });
         this.setState({navItems: navItems});
         return;
@@ -87,7 +89,7 @@ class Navigation extends Component {
     return (
       <Fragment>
         <NavIcon active={this.state.isOpen} clicked={this.clickHandler} />
-        <NavItems show={this.state.isOpen ? true : false} items={this.state.navItems} clicked={this.clickHandler} user={this.props.user} />
+        <NavItems show={this.state.isOpen ? true : false} items={this.state.navItems} user={this.props.user} />
       </Fragment>
     );
   };

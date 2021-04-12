@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
@@ -43,7 +44,26 @@ class NewPost extends Component {
 
   onSubmitHandler = event => {
     event.preventDefault();
-    this.props.history.push({pathname: '/posts'});
+
+    const post = {
+      Title: this.state.formControls.title.value,
+      Body: this.state.formControls.body.value,
+      UID: this.props.user.UID
+    };
+
+    const config = {
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded'
+      }
+    };
+
+    axios.post(
+      'http://localhost:3000/posts', post, config
+    ).then(res => {
+      console.log('hello');
+      console.log(res);
+      this.props.history.push({pathname: '/posts'});
+    });
   }
 
   redirect() {
@@ -57,7 +77,7 @@ class NewPost extends Component {
         {this.redirect()}
         <div className={styles.Container}>
           <h1>New Post</h1>
-          <form>
+          <form onSubmit={this.onSubmitHandler}>
             <div className={styles.FormGroup}>
               <input
                 type={this.state.formControls.title.type}

@@ -1,0 +1,27 @@
+.MessageContainer {
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+
+.Message {
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
+  padding: 2px 1.5rem;
+  border-radius: 5px;
+}
+
+.Self .Message {
+  background-color: rgba(0, 0, 0, .6);
+  color: white;
+}
+
+.NotSelf .Message {
+  color: rgba(0, 0, 0, .8);
+}
+
+.Self {
+  text-align: right;
+}
+
+.NotSelf {
+  text-align: left;
+}

@@ -64,7 +64,7 @@ class Navigation extends Component {
         });
         navItems.push({
           name: 'Make a Post',
-          to: '/posts',
+          to: '/posts/new',
           clicked: this.clickHandler
         });
         navItems.push({

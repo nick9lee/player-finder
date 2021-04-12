@@ -1,0 +1,13 @@
+.ChatContainer {
+  display: flex;
+  align-items: center;
+}
+
+.Name {
+  font-size: 1.6rem;
+  margin-left: 1rem;
+}
+
+.ChatContainer:not(:last-child) {
+  margin-bottom: 2rem;
+}

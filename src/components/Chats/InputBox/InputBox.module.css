@@ -1,0 +1,21 @@
+.HOC {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.Input {
+  border: none;
+  border-bottom: 1px solid rgba(150, 150, 150, .8);
+  outline: none;
+}
+
+.SendBtn {
+  background-color: white;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: rgb(150, 150, 150);
+  margin-left: 1rem;
+}

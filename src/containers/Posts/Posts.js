@@ -26,6 +26,7 @@ class Posts extends Component {
     axios.get(
       'http://localhost:3000/posts'
     ).then(res => {
+      console.log(res);
       const posts = [];
       res.data.forEach(p => {
         const post = {

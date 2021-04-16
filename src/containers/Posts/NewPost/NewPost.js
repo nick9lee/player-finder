@@ -57,10 +57,15 @@ class NewPost extends Component {
       }
     };
 
+    const params = new URLSearchParams();
+
+    params.append('Title', this.state.formControls.title.value);
+    params.append('Body', this.state.formControls.body.value);
+    params.append('UID', this.props.user.UID);
+
     axios.post(
-      'http://localhost:3000/posts', post, config
+      'http://localhost:3000/posts', params, config
     ).then(res => {
-      console.log('hello');
       console.log(res);
       this.props.history.push({pathname: '/posts'});
     });

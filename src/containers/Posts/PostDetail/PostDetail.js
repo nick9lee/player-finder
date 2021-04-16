@@ -21,6 +21,7 @@ class PostDetail extends Component {
     axios.get(
       `http://localhost:3000/posts/${this.props.match.params.id}`
     ).then(res => {
+      console.log(res);
       const post = {
         post: {
           ...res.data,

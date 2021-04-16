@@ -32,10 +32,33 @@ export const setUser = user => {
 }
 
 export const signup = data => {
-  return  {
-    type: actionTypes.SIGNUP,
-    data: data
-  };
+  return dispatch => {
+    const config = {
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded'
+      }
+    };
+
+    const params = new URLSearchParams();
+
+    params.append('Fname', data.Fname);
+    params.append('Lname', data.Lname);
+    params.append('Addr', data.Addr);
+    params.append('Email', data.Email);
+    params.append('Password', data.Password);
+    params.append('Gender', data.Gender);
+
+
+    axios.post(
+      'http://localhost:3000/users', params, config
+    ).then(res => {
+      console.log(res);
+      dispatch({
+        type: actionTypes.SIGNUP,
+        data: {}
+      })
+    })
+  }
 }
 
 export const authFail = errMsg => {

@@ -26,8 +26,9 @@ const app = props => {
         <Route path='/chats' exact component={Chats} />
         <Route path = '/posts/:id' component={Post} />
         <Route path='/chats/:id' component={Chat} />
+        <Route path='/' component={Posts} />
       </Switch>
-      <Redirect to='/posts' />
+      {/* <Redirect to='/posts' /> */}
       </BrowserRouter>
     </Fragment>
     

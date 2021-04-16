@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import PostItem from './PostItem/PostItem';
 
 const posts = props => {
+  console.log(props);
   return (
     <ul>
     {

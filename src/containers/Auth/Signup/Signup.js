@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import styles from './Signup.module.css';
 import * as actions from '../../../store/actions/auth';
@@ -120,6 +121,7 @@ class Signup extends Component {
               })
             }
             <button className={styles.SubmitBtn}>Signup</button>
+            <p className={styles.Login}><Link to='/login'>Already have an account? Login</Link></p>
           </div>
         </form>
       </div>
